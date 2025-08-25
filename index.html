@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sunrise Primary School</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="school-name">🌞 Sunrise Primary School</h1>
+
+    <!-- FLEXBOX NAV: simple row that wraps on small screens -->
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Classes</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- GRID LAYOUT: switches from 1 column (mobile) to 2 columns (desktop) -->
+  <div class="layout">
+    <main class="content" id="main">
+      <section class="hero">
+        <h2>Welcome, families! 👋</h2>
+        <p>
+          We are a friendly school where children learn, play, and grow.
+        </p>
+        <a class="button" href="#">View Term Calendar</a>
+      </section>
+
+      <!-- FLEXBOX CARDS: wrap onto new lines when space is small -->
+      <section class="cards">
+        <h3>Explore</h3>
+        <div class="card-row">
+          <article class="card">
+            <h4>📚 Our Classes</h4>
+            <p>From Kindergarten to Year 6. Fun, safe, and creative learning!</p>
+          </article>
+          <article class="card">
+            <h4>🎨 Clubs & Sports</h4>
+            <p>Art, music, football, chess, and more after-school activities.</p>
+          </article>
+          <article class="card">
+            <h4>💛 Our Values</h4>
+            <p>Kindness, curiosity, teamwork, and doing our best every day.</p>
+          </article>
+          <article class="card">
+            <h4>👪 Parent Portal</h4>
+            <p>Newsletters, permission slips, and helpful resources for families.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar" aria-label="School info">
+      <section class="info">
+        <h3>School Hours</h3>
+        <ul>
+          <li>Mon–Fri: 8:30 AM – 3:00 PM</li>
+          <li>Break: 10:30 AM – 10:50 AM</li>
+          <li>Lunch: 12:30 PM – 1:10 PM</li>
+        </ul>
+      </section>
+
+      <section class="info">
+        <h3>Contact Us</h3>
+        <p>105 Runda, Nairobi</p>
+        <p>Phone: (+254) 728-000-102</p>
+        <p>Email: <a href="mailto:hello@sunriseprimary.edu">hello@sunriseprimary.edu</a></p>
+      </section>
+
+      <section class="info">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Lunch Menu</a></li>
+          <li><a href="#">Uniform Guide</a></li>
+          <li><a href="#">Term Dates</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Sunrise Primary School</p>
+  </footer>
+</body>
+</html>

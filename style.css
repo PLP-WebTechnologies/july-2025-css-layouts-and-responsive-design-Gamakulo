@@ -1,0 +1,116 @@
+/* =========================================
+   Primary School — Simple Responsive Layout
+   - Grid for page (main + sidebar)
+   - Flexbox for nav and card rows
+   - Two breakpoints: 600px (tablet), 900px (desktop)
+   ========================================= */
+
+/* 1) Base styles */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;              /* friendly dark gray */
+  background: #f5fbff;         /* soft sky */
+}
+img { max-width: 100%; display: block; }
+a { color: #0b77c0; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 2) Header + Nav (Flexbox) */
+.site-header {
+  background: linear-gradient(#fff7c2, #ffe781);  /* sunny yellow */
+  border-bottom: 2px solid #ffd54a;
+  padding: 1rem 5%;
+}
+.school-name {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+/* FLEXBOX NAV: items in a row, wrap when narrow */
+.site-nav ul {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;          /* Flexbox */
+  gap: 0.6rem;
+  flex-wrap: wrap;        /* allow wrapping on small screens */
+}
+.site-nav a {
+  display: inline-block;
+  padding: 0.45rem 0.7rem;
+  background: #ffffff;
+  border: 1px solid #ffd54a;
+  border-radius: 8px;
+}
+
+/* 3) Grid Layout (page shell) */
+.layout {
+  /* One column by default (mobile-first) */
+  display: grid;                     /* Grid */
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "content"
+    "sidebar";
+  gap: 1rem;
+  width: 90%;
+  max-width: 1100px;
+  margin: 1rem auto;
+}
+.content { grid-area: content; }
+.sidebar { grid-area: sidebar; }
+
+/* 4) Cards + sections */
+.hero, .cards, .sidebar .info {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.hero h2 { margin-top: 0; }
+.button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: #0b77c0;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+/* Card row uses Flexbox, cards wrap nicely */
+.card-row {
+  display: flex;          /* Flexbox */
+  gap: 1rem;
+  flex-wrap: wrap;        /* wrap to new lines */
+}
+.card {
+  flex: 1 1 220px;        /* preferred width 220px; can grow/shrink */
+  background: #f9fdff;
+  border: 1px solid #e3f2fd;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+/* 5) Sidebar tidiness */
+.sidebar .info + .info { margin-top: 1rem; }
+.sidebar ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1rem;     /* simple list indent */
+}
+
+/* 6) Media queries */
+
+/* Tablet: slightly larger text for readability */
+@media (min-width: 600px) {
+  body { font-size: 1.05rem; }
+}
+
+/* Desktop: switch to two columns (content + sidebar) */
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 2fr 1fr;   /* two columns */
+    grid-template-areas: "content sidebar";
+  }
+}
